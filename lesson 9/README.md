@@ -1,11 +1,27 @@
 # Lesson 9
 
-In Lesson 9, you will explore form-database interactions. Sending and receiving data in these interactions relies on SQL. SQL stands for Structured Query Language and is used to communicate with databases. We will be using the Cloud 9 platform to setup a database to interact with your form.
+In Lesson 9, you will be creating a javascript server using NodeJS to host your website on Cloud9 Web IDE (Integrated Development Environment)
  
 ### Instructions
-1. Open Notepad, or your favorite text editor.
-2. Save the file as.....
-3. Using the example below, reproduce the webpage with your own content///
+1. Register an account on Cloud9
+2. Create a new project in Cloud9 using the Empty Template
+3. Within the `bash` in the bottom panel, paste the following command in: `npm install express` and hit Enter
+4. Create a new file within the project called `server.js`
+5. Paste the following content into `server.js`
+```Javascript
+var express = require('express'); //require the express package and store the module in the variable 'express'
+var app = express(); //create a new server app by executing the module
+
+/**
+Create an event handler in our server, 
+specifying that when it received a GET request, respond with with "hello world"
+*/
+app.get('/', function (req, res) {
+  res.send('Hello world'); 
+});
+
+app.listen(process.env.PORT);
+```
 
 1. Visit https://c9.io and create an account
 2. Navigate to https://docs.c9.io/docs/ and read 'Set Up a Database,' referring specifically to the MySQL section.
